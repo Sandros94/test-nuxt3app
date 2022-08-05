@@ -1,23 +1,25 @@
 module.exports = {
-  content: [
-    './components/**/*.{vue,js}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './composables/**/*.{js,ts}',
-    './plugins/**/*.{js,ts}',
-    './App.{js,ts,vue}',
-    './app.{js,ts,vue}',
-  ],
-  darkMode: 'class', // or 'class'
-  theme: {
-    screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-    },
-    extend: {},
+  darkMode: "class",
+  variants: {
+    backgroundColor: [
+      "dark",
+      "dark-hover",
+      "dark-group-hover",
+      "dark-even",
+      "dark-odd"
+    ],
+    borderColor: ["dark", "dark-focus", "dark-focus-within"],
+    textColor: ["dark", "dark-hover", "dark-active"]
   },
-  plugins: [],
+  content: [],
+  theme: {
+    extend: {
+      fontFamily: {
+        // sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
